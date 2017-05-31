@@ -1,0 +1,3 @@
+[submodule "snakemake-workflows"]
+	path = snakemake-workflows
+	url = git@github.com:EnvGen/snakemake-workflows.git
