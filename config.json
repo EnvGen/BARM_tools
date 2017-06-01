@@ -1,0 +1,37 @@
+{
+    "global_tmp_dir": "$SNIC_TMP",
+    "bowtie2_rules": {
+        "load_env": "",
+        "platform": "Illumina",
+        "mapping_params": {
+            "default": "",
+            "local": "--local"
+        }
+    },
+    "samtools_rules": {
+        "load_env": "",
+        "picard_jars": "/sw/apps/bioinfo/picard/1.118/milou",
+        "threads_for_sorting": "16"
+    },
+    "bowtie2_quant_rules": {
+        "load_env": "",
+        "load_htseq_env": "",
+        "gene_prediction": "prodigal_default-meta",
+        "references": {},
+        "samples": {},
+        "units": {},
+        "reference_for_ref_set": {},
+        "mapping_params": {
+            "default": "",
+            "local": "--local"
+        },
+        "prodigal_parameters_used": "default-meta",
+        "mapper": "bowtie2",
+        "scripts_dir": "scripts",
+        "rpkm_table_script": "toolbox/scripts/rpkm_table.py",
+        "tpm_table_script": "toolbox/scripts/tpm_table.py",
+        "raw_counts_table_script": "toolbox/scripts/raw_counts.py",
+        "split_ref_sets": {},
+        "rpkm_annotations_table_script": "BLUEPRINT_pipeline/toolbox/scripts/rpkm_annotations_table.py"
+    }
+}

@@ -1,0 +1,5 @@
+.snakemake/*
+assembly/*
+annotation/*
+mapping/*
+finished_reads/*

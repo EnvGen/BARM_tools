@@ -1,4 +1,4 @@
-Trimmed reads filename should match finished_reads/[r,d]na/<sample_group>/*.fq.gz
+Trimmed reads filename should match finished_reads/{r,d]}na/<sample_group>/*_R{1,2}.fq.gz
 
 BARM assembly should be placed in assembly/BARM.fa.gz
 
