@@ -1,3 +1,6 @@
 [submodule "snakemake-workflows"]
 	path = snakemake-workflows
 	url = git@github.com:EnvGen/snakemake-workflows.git
+[submodule "toolbox"]
+	path = toolbox
+	url = git@github.com:EnvGen/toolbox.git
