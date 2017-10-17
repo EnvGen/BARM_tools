@@ -3,8 +3,21 @@ A set of tools that are useful to reuse the Baltic Sea Reference Metagenome.
 
 ## Requirements
 
-bowtie2
+```
+  bowtie2
+  
+```
 
+## Installation
+
+```
+  conda create -n barm_tools_env python=3
+  source activate barm_tools_env
+  conda install snakemake
+  git clone --recursive https://github.com/EnvGen/BARM_tools.git
+  cd BARM_tools
+
+```
 
 ## Data
 Trimmed reads filename should match finished_reads/{r,d]}na/<sample_group>/*_R{1,2}.fq.gz
