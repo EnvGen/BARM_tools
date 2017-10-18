@@ -12,9 +12,9 @@ These are the required external softwares in order to perform mapping, processin
 ```
 
 ## Installation
-We recommend the usage of a conda virtual environment, see https://conda.io/miniconda.html 
+In addition to the requirements listed above, we recommend the usage of a conda virtual environment. In order to use these see installation instructions at https://conda.io/miniconda.html 
 
-This will set up a virtual environment, install snakemake and pandas within the environment and further clone this repository in order to start the analysis. This tutorial assumes you're using this directory as the working directory.
+These commands will set up a conda virtual environment, install snakemake and pandas within the environment and further clone this repository in order to start the analysis. This tutorial assumes you're using this directory as the working directory.
 
 ```
   conda create -n barm_tools_env python=3
