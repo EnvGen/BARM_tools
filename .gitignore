@@ -1,5 +1,12 @@
 .snakemake/*
 assembly/*
-annotation/*
+annotation/EggNOG/*
+annotation/pfam/*
+annotation/pfam_uniq/*
+annotation/EC/*
+annotation/TIGRFAM/*
+annotation/dbCAN/*
+annotation/dbCAN_uniq/*
+annotation/prodigal/*
 mapping/*
 finished_reads/*

@@ -16,7 +16,7 @@
     "bowtie2_quant_rules": {
         "load_env": "",
         "load_htseq_env": "",
-        "gene_prediction": "prodigal_default-meta",
+        "gene_prediction": "prodigal",
         "references": {},
         "samples": {},
         "units": {},
@@ -28,6 +28,7 @@
         "prodigal_parameters_used": "default-meta",
         "mapper": "bowtie2",
         "scripts_dir": "scripts",
+        "read_length_script": "toolbox/scripts/gene_length.py",
         "rpkm_table_script": "toolbox/scripts/rpkm_table.py",
         "tpm_table_script": "toolbox/scripts/tpm_table.py",
         "raw_counts_table_script": "toolbox/scripts/raw_counts.py",
