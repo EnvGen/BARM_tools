@@ -55,8 +55,8 @@ else:
     sys.stderr.write("Found {} read files in {} sample groups\n".format(i+1, len(sample_groups)))
 
 config["bowtie2_quant_rules"]["sample_groups"] = sample_groups
-config["bowtie2_quant_rules"]["references"]["megahit_coassembly_contigs"] = megahit_coassembly_contigs
-config["bowtie2_quant_rules"]["reference_for_ref_set"]["megahit_coassembly"] = "megahit_coassembly_contigs"
+config["bowtie2_quant_rules"]["references"]["BARM"] = megahit_coassembly_contigs
+config["bowtie2_quant_rules"]["reference_for_ref_set"]["BARM"] = "BARM"
 config["bowtie2_quant_rules"]["count_units"] = ['raw_counts', 'tpm']
 
 config["bowtie2_rules"]["references"] = config["bowtie2_quant_rules"]["references"]
@@ -76,17 +76,16 @@ include: os.path.join(WORKFLOW_DIR, "bio/ngs/rules/mapping/bowtie2.rules")
 include: os.path.join(WORKFLOW_DIR, "bio/ngs/rules/mapping/samtools.rules")
 include: os.path.join(WORKFLOW_DIR, "bio/ngs/rules/quantification/bowtie2.rules")
 
+
 # The index is large, need to use .bt2l indices
 ruleorder: bowtie2_map_large > bowtie2_map
 
-
-
 rule link_quantification:
-    input: "quantification/bowtie2_genes/local/megahit_coassembly/annotations/{sample_group}/{annotation}.{normalization}.annotated.tsv.gz"
-    output: "quantification/{sample_group}/{annotation}.{normalization}.annotated.tsv.gz"
+    input: "quantification/bowtie2_genes/local/BARM/annotations/{sample_group}/{annotation}.{normalization}.annotated.tsv.gz"
+    output: "summary_tables/{sample_group}/{annotation}.{normalization}.annotated.tsv.gz"
     shell: "ln -s {input} {output}"
 
-rule quantify_all:
-    input: expand("quantification/{sample_group}/{annotation}.{normalization}.annotated.tsv.gz", sample_group = sample_groups, annotation = config["prodigal_rules"]["dbs"], normalization = config["bowtie2_quant_rules"]["count_units"])
 
-            
+rule quantify_all:
+    input: expand("summary_tables/{sample_group}/{annotation}.{normalization}.annotated.tsv.gz", sample_group = sample_groups, annotation = config["prodigal_rules"]["dbs"], normalization = config["bowtie2_quant_rules"]["count_units"])
+
